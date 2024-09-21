@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
+:root {
+    --fonte--titulo: 'Luckiest Guy', Static;
+    --fonte--texto: 'Ubuntu';
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Press Start', cursive;
+    box-sizing: border-box;
+    background-color:#3db4fb;
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    margin: 20px;
+    padding: 20px;
+}
+
+.container {
+    color: floralwhite;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Título */
+h2 {
+    font-family: var(--fonte--titulo);
+    color: white;
+    font-size: 2em;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Moedas no topo */
+.coins {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -120px;
+}
+
+.coin {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+}
+
+/* Botão Start */
+.start-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 25px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 5px 4px #999;
+}
+
+.start-button:active {
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+.start-button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Caixa de texto */
+.texto-duascolunas {
+    font-family: var(--fonte--texto);
+    column-count: 2;
+    column-gap: 35px;
+    text-align: justify;
+    font-size: 1em;
+    margin: 20px 30px 60px 50px;
+    padding: 15px;
+}
+
+/* Detalhes do evento */
+.details {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.detail p {
+    font-family: var(--fonte--texto);
+    color: white;
+    align-items: center;
+    font-size: 1.2em;
+    margin: 30px 30px;
+}
+
+/* Ícones (moeda, chave, porta) */
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    margin: 0 10px;
+}
+
+/* Imagem fase */
+.fase2 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    align-items: self-start;
+    height: 10vh;
+    width: 100px;
+    height: 150px;
+    margin: 0 0 20px 0; /* Espaço entre a imagem e o texto */
+    padding: 0;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .texto-duascolunas {
+        column-count: 1; /* Muda para uma coluna em telas menores */
+        margin: 20px;
+        font-size: 0.9em; /* Diminui um pouco o tamanho da fonte */
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    .start-button {
+        font-size: 1.2em;
+        padding: 8px 20px;
+    }
+
+    .coins, .icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fase2 {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}
+
+/* Responsividade para telas extra pequenas (celulares) */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em; /* Reduz o tamanho do título */
+    }
+
+    .start-button {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+
+    .texto-duascolunas {
+        font-size: 0.8em;
+    }
+}
