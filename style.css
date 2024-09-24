@@ -12,12 +12,12 @@
 }
 
 body {
-    font-family: 'Press Start', cursive;
+    font-family:var(--fonte--titulo);
     box-sizing: border-box;
     background-color:#3db4fb;
     display: flex;
-    justify-content:space-around;
-    align-items:center;
+    justify-content: space-around;
+    align-items: center;
     margin: 20px;
     padding: 20px;
 }
@@ -27,7 +27,7 @@ body {
     text-align: center;
     position: relative;
     width: 90%;
-    max-width: 500px;
+    max-width: 600px; /* Aumentei o max-width */
 }
 
 /* Título */
@@ -44,7 +44,8 @@ h2 {
 .coins {
     display: flex;
     justify-content: center;
-    margin-bottom: -120px;
+    margin-top: 50px; /* Aproximar as moedas da imagem */
+    margin-bottom: 40px; /* Espaçamento suficiente entre moedas e texto */
 }
 
 .coin {
@@ -64,6 +65,9 @@ h2 {
     cursor: pointer;
     display: inline-block;
     box-shadow: 5px 4px #999;
+    text-align: center; /* Centraliza o texto */
+    width: 120px; /* Ajusta o tamanho do botão */
+    margin-top: 20px; /* Adicionado para dar espaçamento */
 }
 
 .start-button:active {
@@ -81,11 +85,12 @@ h2 {
 .texto-duascolunas {
     font-family: var(--fonte--texto);
     column-count: 2;
-    column-gap: 35px;
+    column-gap: 20px;
     text-align: justify;
     font-size: 1em;
-    margin: 20px 30px 60px 50px;
-    padding: 15px;
+    margin: 0 auto; /* Centraliza o texto */
+    max-width: 600px; /* Limitar a largura do texto para não ocupar toda a tela */
+    padding-top: 20px; /* Espaçamento entre a imagem e o texto */
 }
 
 /* Detalhes do evento */
@@ -100,7 +105,7 @@ h2 {
     color: white;
     align-items: center;
     font-size: 1.2em;
-    margin: 30px 30px;
+    margin: 10px 10px;
 }
 
 /* Ícones (moeda, chave, porta) */
@@ -108,7 +113,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .icon {
@@ -120,22 +125,33 @@ h2 {
 /* Imagem fase */
 .fase2 {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: right;
-    align-items: self-start;
-    height: 10vh;
-    width: 100px;
-    height: 150px;
-    margin: 0 0 20px 0; /* Espaço entre a imagem e o texto */
+    justify-content: center; /* Centraliza a imagem */
+    align-items: flex-start;
+    width: auto;
+    height: auto;
+    margin: 0;
     padding: 0;
 }
 
-/* Responsividade para telas pequenas */
-@media (max-width: 768px) {
+/* Ajuste para telas maiores */
+@media (min-width: 769px) {
     .texto-duascolunas {
-        column-count: 1; /* Muda para uma coluna em telas menores */
-        margin: 20px;
-        font-size: 0.9em; /* Diminui um pouco o tamanho da fonte */
+        column-count: 2;
+        padding-top: 50px; /* Aumentar o espaçamento ainda mais para telas grandes */
+    }
+}
+
+/* Responsividade para telas médias (tablets) */
+@media (max-width: 768px) {
+    .coins {
+        margin-top: -30px; /* Ajuste para espaçamento em telas menores */
+        margin-bottom: 30px;
+    }
+
+    .texto-duascolunas {
+        column-count: 1; /* Apenas uma coluna no mobile */
+        padding-top: 20px;
+        max-width: 100%;
     }
 
     .container {
@@ -147,11 +163,7 @@ h2 {
     .start-button {
         font-size: 1.2em;
         padding: 8px 20px;
-    }
-
-    .coins, .icons {
-        flex-direction: column;
-        align-items: center;
+        width: auto;
     }
 
     .fase2 {
@@ -163,15 +175,17 @@ h2 {
 /* Responsividade para telas extra pequenas (celulares) */
 @media (max-width: 480px) {
     h2 {
-        font-size: 1.5em; /* Reduz o tamanho do título */
+        font-size: 1.5em;
     }
 
     .start-button {
         font-size: 1em;
         padding: 8px 15px;
+        width: auto;
     }
 
     .texto-duascolunas {
         font-size: 0.8em;
+        padding-top: 20px; /* Aumenta o espaçamento no mobile */
     }
 }
